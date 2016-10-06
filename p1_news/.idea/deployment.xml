@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData">
+  <component name="PublishConfigData" serverName="Apache">
     <serverData>
       <paths name="Apache">
         <serverdata>
           <mappings>
-            <mapping deploy="p1_news" local="$PROJECT_DIR$" web="/p1_news" />
+            <mapping deploy="php_repo\p1_news" local="$PROJECT_DIR$" web="/php_repo/p1_news" />
             <mapping local="" />
           </mappings>
         </serverdata>
