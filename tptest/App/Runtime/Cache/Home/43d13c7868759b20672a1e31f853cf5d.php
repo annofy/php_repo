@@ -5,6 +5,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	/thinkphp/Public
+	/php_repo/tptest/Public
 </body>
 </html>
