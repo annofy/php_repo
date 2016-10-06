@@ -29,11 +29,11 @@
         <div class="row">
             <div class="col-lg-6">
 
-                <form class="form-horizontal" id="singcms-form">
+                <form class="form-horizontal" id="menu_add_form">
                     <div class="form-group">
-                        <label for="inputname" class="col-sm-2 control-label">菜单名:</label>
+                        <label for="menu_name" class="col-sm-2 control-label">菜单名:</label>
                         <div class="col-sm-5">
-                            <input type="text" name="name" class="form-control" id="inputname" placeholder="请填写菜单名">
+                            <input type="text" name="name" class="form-control" id="menu_name" placeholder="请填写菜单名">
                         </div>
                     </div>
                     <!--<div class="form-group">
@@ -48,7 +48,7 @@
                         </div>
                     </div>-->
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">菜单类型:</label>
+                        <label for="" class="col-sm-2 control-label">菜单类型:</label>
                         <div class="col-sm-5">
                             <input type="radio" name="type" id="optionsRadiosInline1" value="1" checked> 后台菜单
                             <input type="radio" name="type" id="optionsRadiosInline2" value="0"> 前端栏目
@@ -56,21 +56,21 @@
 
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">模块名:</label>
+                        <label for="" class="col-sm-2 control-label">模块名:</label>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control" name="m" id="inputPassword3" placeholder="模块名如admin">
+                            <input type="text" class="form-control" name="m" id="" placeholder="模块名如admin">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">控制器:</label>
+                        <label for="" class="col-sm-2 control-label">控制器:</label>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control" name="c" id="inputPassword3" placeholder="控制器如index">
+                            <input type="text" class="form-control" name="c" id="" placeholder="控制器如index">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">方法:</label>
+                        <label for="" class="col-sm-2 control-label">方法:</label>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control" name="f" id="inputPassword3" placeholder="方法名如index">
+                            <input type="text" class="form-control" name="f" id="" placeholder="方法名如index">
                         </div>
                     </div>
                     <!--<div class="form-group">
@@ -83,17 +83,17 @@
                     </div>-->
 
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">状态:</label>
+                        <label for="" class="col-sm-2 control-label">状态:</label>
                         <div class="col-sm-5">
-                            <input type="radio" name="status" id="optionsRadiosInline1" value="1" checked> 开启
-                            <input type="radio" name="status" id="optionsRadiosInline2" value="0"> 关闭
+                            <input type="radio" name="status" id="" value="1" checked> 开启
+                            <input type="radio" name="status" id="" value="0"> 关闭
                         </div>
 
                     </div>
 
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="button" class="btn btn-default" id="singcms-button-submit">提交</button>
+                            <button type="button" class="btn btn-default" id="menu_submit">提交</button>
                         </div>
                     </div>
                 </form>
@@ -116,8 +116,8 @@
 <script>
 
     var SCOPE = {
-        'save_url' : '/admin.php?c=menu&a=add',
-        'jump_url' : '/admin.php?c=menu',
+        'save_url' : 'admin.php?c=menu&a=add',
+        'jump_url' : 'admin.php?c=menu',
     }
 </script>
 <include file="Index/footer" />

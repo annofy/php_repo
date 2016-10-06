@@ -35,7 +35,7 @@
 
                         <option value="1" <if condition="$type eq 1">selected="selected"</if>>后台菜单</option>
                         <option value="0" <if condition="$type eq 0">selected="selected"</if>>前端导航</option>
-                    <lect>
+                    </select>
                 </div>
 
                 <input type="hidden" name="c" value="menu"/>
@@ -47,7 +47,7 @@
             </form>
         </div>
         <div>
-          <button  id="button-add" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加 </button>
+          <button id="button_add" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加 </button>
         </div>
         <div class="row">
             <div class="col-lg-6">
@@ -110,10 +110,10 @@
 <script>
 
     var SCOPE = {
-        'add_url' : '/admin.php?c=menu&a=add',
-        'edit_url' : '/admin.php?c=menu&a=edit',
-        'set_status_url' : '/admin.php?c=menu&a=setStatus',
-        'listorder_url' : '/admin.php?c=menu&a=listorder',
+        'add_url' : 'admin.php?c=menu&a=add',
+        'edit_url' : 'admin.php?c=menu&a=edit',
+        'set_status_url' : 'admin.php?c=menu&a=setStatus',
+        'listorder_url' : 'admin.php?c=menu&a=listorder',
 
     }
 </script>
