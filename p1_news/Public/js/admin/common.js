@@ -27,3 +27,44 @@ $('#menu_submit').click(function () {
         }
     }, 'JSON');
 });
+$('.menu-item-delete').on('click', function() {
+    var id = $(this).attr('attr-id');
+    var a = $(this).attr('attr-a');
+    var message = $(this).attr('attr-message');
+    var url = SCOPE.set_status_url;
+
+    data = {};
+    data['id'] = id;
+    data['status'] = -1;
+
+    layer.open({
+        type: 0,
+        title: '是否提交?',
+        btn: ['确定', '取消'],
+        icon: 3,
+        closeBtn: 2,
+        content: '是否确定' + message,
+        scrollbar: true,
+        确定: function() {
+            // 执行相关跳转
+            toDelete(url, data);
+        }
+    });
+
+});
+function toDelete(url, data) {
+    $.post(url, data, function(result) {
+        if(result.status === 1) {
+            return dialog.success(result.message, '');
+        } else {
+            return dialog.error(result.message);
+        }
+    })
+}
+/**
+ * 编辑模式
+ */
+$('.menu-item-edit').on('click', function () {
+    var id = $(this).attr('attr-id');
+    window.location.href = SCOPE.edit_url + '&id=' + id;
+});

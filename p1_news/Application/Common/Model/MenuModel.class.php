@@ -5,7 +5,7 @@
  * Date: 2016/10/6
  * Time: 18:24
  */
-namespace Common\Controller;
+namespace Common\Model;
 use Think\Model;
 
 class MenuModel extends Model {
@@ -35,6 +35,25 @@ class MenuModel extends Model {
         return $this->_db->where($data)->count();
     }
 
+    public function find($id) {
+        if(!$id || !is_numeric($id)) {
+            return array();
+        }
+        return $this->_db->where('menu_id='.$id)->find();
+    }
+
+    public function updateMenuById($id, $data) {
+        if(!$id || !is_numeric($id)) {
+            throw_exception('ID不合法');
+        }
+        if(!$data || !is_array($data)) {
+            throw_exception('更新数据不合法');
+        }
+        $this->_db->where('menu_id='.$id)->save($data);
+    }
+
+    public function updateStatusById($id, $status) {
+    }
 }
 
 

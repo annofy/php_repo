@@ -22,8 +22,8 @@ class AdminModel extends Model
 
     }
 
-    public function getAdminByUsername($usernmae) {
-        $ret = $this->_db->where('username="'.$usernmae.'"')->find();
+    public function getAdminByUsername($username) {
+        $ret = $this->_db->where('username="'.$username.'"')->find();
         return $ret;
     }
 }

@@ -1,5 +1,4 @@
-
-<include file="Index/header" />
+<include file="Index/header"/>
 <body>
 
 <div id="wrapper">
@@ -26,15 +25,14 @@
         </div>
         <!-- /.row -->
         <div class="row">
-            <form action="/admin.php" method="get">
+            <form action="admin.php" method="get">
 
                 <div class="input-group">
                     <span class="input-group-addon">类型</span>
                     <select class="form-control" name="type">
                         <option value='' >请选择类型</option>
-
-                        <option value="1">后台菜单</option>
-                        <option value="0">前端导航</option>
+                        <option value="1" <if condition="$type eq 1">selected="selected"</if>>后台菜单</option>
+                        <option value="0" <if condition="$type eq 0">selected="selected"</if>>前端导航</option>
                     </select>
                     <span class="input-group-btn">
                       <button id="sub_data" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
@@ -65,7 +63,21 @@
                             </tr>
                         </thead>
                         <tbody>
-
+                            <volist name="menus" id="menu">
+                                <tr>
+                                    <td>{$menu.menu_id}</td>
+                                    <td>{$menu.name}</td>
+                                    <td>{$menu.m}</td>
+                                    <td>{$menu.type | getMenuType}</td>
+                                    <td>{$menu.status | status}</td>
+                                    <td><span class="glyphicon glyphicon-edit menu-item-edit" aria-hidden="true"
+                                                  attr-id="{$menu.menu_id}"></span>
+                                        <a href="javascript:void(0)"
+                                                 attr-id="{$menu.menu_id}" class="menu-item-delete"   attr-a="menu"
+                                                    attr-id="{$menu.menu_id}" attr-message="删除"><span class="glyphicon glyphicon-remove-circle"
+                                                      aria-hidden="true"></span></a></td>
+                                </tr>
+                            </volist>
                         </tbody>
                     </table>
                     </form>
