@@ -8,4 +8,5 @@ return array(
     // 加载额外的配置的文件
     'LOAD_EXT_CONFIG' => 'db',
     'MD5_PRE' => 'sing_cms',
+    'SHOW_PAGE_TRACE' => true
 );

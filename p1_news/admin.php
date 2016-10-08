@@ -14,7 +14,7 @@ $_GET['a'] = (!isset($_GET['a']) || !$_GET['a']) ? 'index' : $_GET['a'];
 
 
 // 定义应用目录
-define('APP_PATH', '../p1_news/Application/');
+define('APP_PATH', './Application/');
 
 
 
