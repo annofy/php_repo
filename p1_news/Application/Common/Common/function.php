@@ -41,4 +41,24 @@ function status($status) {
     return $str;
 }
 
+function checkIntParam($param, $msg) {
+    if(!$param || !is_numeric($param)) {
+        throw_exception($msg);
+    }
+}
 
+function getAdminMenuUrl($nav) {
+    $url = 'admin.php?c='.$nav['c'].'&a='.$nav['a'];
+    if($nav['f'] == 'index') {
+        $url = 'admin.php?c='.$nav['c'];
+    }
+    return $url;
+}
+
+function getActive($navController) {
+    $c = strtolower(CONTROLLER_NAME);
+    if($c == strtolower($navController)) {
+        return 'class="active"';
+    }
+    return '';
+}

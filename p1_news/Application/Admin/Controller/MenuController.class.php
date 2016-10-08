@@ -11,6 +11,11 @@ use Think\Exception;
 use Think\Page;
 
 class MenuController extends Controller {
+
+    public function _initialize() {
+
+    }
+
     public function add() {
         if($_POST) {
             if(!isset($_POST['name']) || !$_POST['name']) {
@@ -92,8 +97,48 @@ class MenuController extends Controller {
     }
 
     public function setStatus() {
+        try{
+            if($_POST) {
+                $id = $_POST['menu_id'];
+                $status = $_POST['status'];
+                // 执行数据更新操作
+                $res = D('Menu')->updateStatusById($id, $status);
+                if($res) {
+                    return show(1, '操作成功');
+                } else {
+                    return show(0, '操作失败');
+                }
 
+            }
+        } catch (Exception $e) {
+            show(0, $e->getMessage());
+        }
+        return show(0, '没有提交数据');
     }
 
+    public function listOrder() {
+        $listOrder = $_POST['listOrder'];
+        $jumpUrl = $_SERVER['HTTP_REFERER'];
+        $errors = array();
+        if($listOrder) {
+            try{
+                foreach($listOrder as $menu_id => $lo) {
+                    $res = D('Menu')->updateListOrderById($menu_id, $lo);
+                    if($res === false) {
+                        $errors[] = $menu_id;
+                    }
+                }
+                if($errors) {
+                    return show(0, '排序失败-'.implode(',', $errors),  array('jump_url'=>$jumpUrl));
+                }
+                // 排序成功
+                show(1, '排序成功', array('jump_url'=>$jumpUrl));
+            } catch(Exception $e) {
+                show(0, $e->getMessage(), array('jump_url'=>$jumpUrl));
+            }
+        }
+        show(0, '排序失败', array('jump_url'=>$jumpUrl));
+
+    }
 
 }
